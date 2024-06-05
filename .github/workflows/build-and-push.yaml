@@ -8,6 +8,9 @@ on:
     paths-ignore:
       - "README.md"
       - "LICENSE"
+  pull_request:
+    branches:
+      - main
 
 env:
   REGISTRY: public.ecr.aws
@@ -27,6 +30,7 @@ jobs:
         install: true
 
     - name: Configure AWS Credentials
+      if: github.event_name == 'push'
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -34,12 +38,14 @@ jobs:
         aws-region: us-east-1
 
     - name: Login to Amazon ECR Public
+      if: github.event_name == 'push'
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v2
       with:
         registry-type: public
 
     - uses: int128/create-ecr-repository-action@v1
+      if: github.event_name == 'push'
       with:
         repository: ${{ env.IMAGE_NAME}}
         public: true
@@ -54,11 +60,12 @@ jobs:
         NO_PUSH: "true"
 
     - name: Push to Amazon ECR
+      if: github.event_name == 'push'
       run: |
         short_sha=$(echo ${{ github.sha }} | cut -c1-12)
         docker push ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${short_sha}
 
     - name: Push latest tag to Amazon ECR from main branch
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
         docker push ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
