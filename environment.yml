@@ -6,6 +6,8 @@ dependencies:
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.3#egg-info=stac_ipyleaflet
+    - maap-algorithms-jupyter-extension
+    - maap-dps-jupyter-extension
 variables:
   TITILER_STAC_ENDPOINT: 'https://staging-stac.delta-backend.com'
   TITILER_ENDPOINT: 'https://staging-raster.delta-backend.com'
