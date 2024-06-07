@@ -52,7 +52,7 @@ jobs:
 
     - name: Run the tests for debugging
       run: |
-        docker build -t pangeo-notebook-veda .
+        docker build --load -t pangeo-notebook-veda .
         docker run pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 
     - name: Build container image
