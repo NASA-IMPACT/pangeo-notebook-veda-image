@@ -50,6 +50,11 @@ jobs:
         repository: ${{ env.IMAGE_NAME}}
         public: true
 
+    - name: Run the tests for debugging
+      run: |
+        docker build -t pangeo-notebook-veda .
+        docker run pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
+
     - name: Build container image
       uses: jupyterhub/repo2docker-action@master
       with:
