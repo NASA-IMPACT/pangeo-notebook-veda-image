@@ -19,4 +19,9 @@ ls /srv/repo/image-tests/*.ipynb > /dev/null && \
     python3 -c "import pytest_notebook" 2> /dev/null || \
         python3 -m pip install --no-cache pytest-notebook > /dev/null;
 
+# If regeneration flag is set, add it to the pytest flags
+[ -n "${REGENERATE_OUTPUTS}" ] && \
+    echo "Regenerating notebook outputs..." && \
+    export PYTEST_FLAGS="--nb-force-regen ${PYTEST_FLAGS}";
+
 py.test ${PYTEST_FLAGS} /srv/repo/image-tests/

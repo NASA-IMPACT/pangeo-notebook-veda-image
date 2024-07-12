@@ -14,8 +14,18 @@ To add new tests, create new notebooks or add to the existing notebooks in `imag
 
 ```bash
 docker build -t pangeo-notebook-veda .
-docker run -v ./image-tests:/home/jovyan/image-tests pangeo-notebook-veda jupyter nbconvert --to notebook --inplace --execute image-tests/*.ipynb
+docker run -v ./image-tests:/srv/repo/image-tests -e REGENERATE_OUTPUTS=true pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 ```
+
+### Regenrating the output of the test notebooks
+
+To regenerate the output of the test notebooks, we can use the same command we used in the previous section to generate the output of the notebooks while adding new tests:
+
+```bash
+docker build -t pangeo-notebook-veda .
+docker run -v ./image-tests:/srv/repo/image-tests -e REGENERATE_OUTPUTS=true pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
+```
+This will regenerate the output of the notebooks in place and you can commit the changes to the repository. Tests will fail when the output of the notebooks is different from the existing output. But on subsequent runs, the tests will pass after the output is regenerated.
 
 ### Running the test notebooks interactively
 
