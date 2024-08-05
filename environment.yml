@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - ipykernel
+  - jupyter-collaboration
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.3#egg-info=stac_ipyleaflet
