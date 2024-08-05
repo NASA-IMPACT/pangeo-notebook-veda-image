@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - "**" # Push to any branch
+    tags:
+      - "**"
     paths-ignore:
       - "README.md"
       - "LICENSE"
@@ -16,6 +18,7 @@ env:
   REGISTRY: public.ecr.aws
   NAMESPACE: nasa-veda
   IMAGE_NAME: pangeo-notebook-veda-image
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -56,16 +59,28 @@ jobs:
         DOCKER_REGISTRY: ${{ env.REGISTRY }}
         IMAGE_NAME: ${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}
         REPO_DIR: /srv/repo
-        # Don't push because pushes to the public ECR repository seem to fail
         NO_PUSH: "true"
 
-    - name: Push to Amazon ECR
-      if: github.event_name == 'push'
+    - name: Set image tag
+      id: set_tag
       run: |
-        short_sha=$(echo ${{ github.sha }} | cut -c1-12)
-        docker push ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${short_sha}
+        if [[ $GITHUB_REF == refs/tags/* ]]; then
+          echo "IMAGE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        else
+          echo "IMAGE_TAG=$(echo ${{ github.sha }} | cut -c1-12)" >> $GITHUB_OUTPUT
+        fi
 
-    - name: Push latest tag to Amazon ECR from main branch
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    - name: Tag and push image
+      if: github.event_name == 'push'
+      env:
+        IMAGE_TAG: ${{ steps.set_tag.outputs.IMAGE_TAG }}
       run: |
-        docker push ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
+        FULL_IMAGE_NAME=${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}
+        docker tag $FULL_IMAGE_NAME:latest $FULL_IMAGE_NAME:$IMAGE_TAG
+        docker push $FULL_IMAGE_NAME:$IMAGE_TAG || exit 1
+        echo "Pushed image: $FULL_IMAGE_NAME:$IMAGE_TAG"
+
+        if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+          docker push $FULL_IMAGE_NAME:latest || exit 1
+          echo "Pushed image: $FULL_IMAGE_NAME:latest"
+        fi
