@@ -26,6 +26,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Debug Event
+      run: echo ${{ toJson(github.event) }}
+
     - name: Set up Docker Buildx
       id: buildx
       uses: docker/setup-buildx-action@v3
