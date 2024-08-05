@@ -42,5 +42,3 @@ To run the tests locally, run the following command:
 docker build -t pangeo-notebook-veda .
 docker run pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 ```
-
-
