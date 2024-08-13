@@ -8,10 +8,10 @@ dependencies:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.3#egg-info=stac_ipyleaflet
     - maap-algorithms-jupyter-extension
     - maap-dps-jupyter-extension
+    - maap-jupyter-server-extension
 variables:
   TITILER_STAC_ENDPOINT: 'https://staging-stac.delta-backend.com'
   TITILER_ENDPOINT: 'https://staging-raster.delta-backend.com'
   STAC_CATALOG_NAME: 'VEDA STAC'
   STAC_CATALOG_URL: 'https://staging-stac.delta-backend.com/'
   STAC_BROWSER_URL: 'http://veda-staging-stac-browser.s3-website-us-west-2.amazonaws.com/'
-  MAAP_PGT: 'PGT-5028-3LVUljM-fFlNwW91IcAeM2bIpNs18fwEyJOSaAprwIhd8g9-yvj6YVtz8XrRRUV7H4I-93f206e1209e'
