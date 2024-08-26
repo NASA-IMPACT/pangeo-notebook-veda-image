@@ -11,7 +11,7 @@ ADD environment.yml environment.yml
 
 RUN mamba env update --prefix /srv/conda/envs/notebook --file environment.yml
 
-RUN source activate /srv/conda/envs/notebook
+RUN conda activate /srv/conda/envs/notebook
 RUN pip install git+https://github.com/MAAP-Project/maap-py.git@feature/maappy-gets-username#egg=maap-py
 RUN pip install maap-dps-jupyter-extension==0.7.2 --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/
 RUN pip install maap-algorithms-jupyter-extension==0.3.4
