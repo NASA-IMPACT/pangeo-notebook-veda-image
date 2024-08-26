@@ -9,14 +9,13 @@ USER ${NB_USER}
 
 ADD environment.yml environment.yml
 
-RUN mamba env update --prefix /srv/conda/envs/notebook --file environment.yml
-
-RUN echo "PREFIX: ${CONDA_PREFIX}"
-
-RUN mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+ENV CONDA_PREFIX=/srv/conda/envs/notebook
 ADD default_pip_packages.sh $CONDA_PREFIX/etc/conda/activate.d/default_pip_packages.sh
 ADD custom_pip_packages.sh $CONDA_PREFIX/etc/conda/activate.d/custom_pip_packages.sh
 RUN chmod +x $CONDA_PREFIX/etc/conda/activate.d/custom_pip_packages.sh
 RUN chmod +x $CONDA_PREFIX/etc/conda/activate.d/default_pip_packages.sh
+
+RUN mamba env update --prefix /srv/conda/envs/notebook --file environment.yml
+
 
 
