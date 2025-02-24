@@ -15,6 +15,7 @@ dependencies:
     - jupyter-sshd-proxy
     - jupyterlab-bxplorer
     - nbss-upload
+    - rio-stac
     - stac-asset
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
