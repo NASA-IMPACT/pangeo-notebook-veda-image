@@ -15,6 +15,7 @@ dependencies:
     - jupyter-sshd-proxy
     - jupyterlab-bxplorer
     - nbss-upload
+    - parse
     - rio-stac
     - stac-asset
 variables:
