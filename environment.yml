@@ -16,6 +16,7 @@ dependencies:
     - jupyterlab-bxplorer
     - nbss-upload
     - parse
+    - rasterstats
     - rio-stac
     - stac-asset
     - xpystac
