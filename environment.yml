@@ -18,6 +18,7 @@ dependencies:
     - parse
     - rio-stac
     - stac-asset
+    - xpystac
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
   TITILER_ENDPOINT: 'https://openveda.cloud/api/raster'
