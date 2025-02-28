@@ -4,7 +4,7 @@ channels:
 dependencies:
   - ipykernel
   # Dependencies for VS Code IDE
-  - code-server>=3.2
+  - code-server>=3.2,<=4.96.4
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
