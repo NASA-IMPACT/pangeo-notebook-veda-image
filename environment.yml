@@ -8,6 +8,7 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
+  - plotly
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
