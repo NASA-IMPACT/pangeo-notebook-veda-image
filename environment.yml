@@ -8,7 +8,7 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   # Remove once Pangeo has upstream
-  - libgdal-arrow-parquet
+  - libgdal-arrow-parquet==3.10.3
   - pre_commit
   - pip
   - pip:
