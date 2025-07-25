@@ -1,5 +1,9 @@
 export PYTEST_FLAGS="";
 
+# first inspect what all is in the image
+echo "Output of mamba list in the image..."
+mamba list
+
 # If there is a requirements.txt file inside image-tests, install it.
 # Useful if you want to install a bunch of pytest packages.
 [ -f /srv/repo/image-tests/requirements.txt ] && \
