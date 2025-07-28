@@ -2,6 +2,8 @@ FROM pangeo/pangeo-notebook:2025.06.02
 
 LABEL org.opencontainers.image.source="https://github.com/nasa-impact/pangeo-notebook-veda-image"
 
+USER root
+
 RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.32/quarto-1.7.32-linux-amd64.deb && \ 
 	dpkg -i  quarto-1.7.32-linux-amd64.deb
 
