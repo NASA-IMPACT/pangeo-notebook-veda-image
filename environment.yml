@@ -8,9 +8,8 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   # Remove once Pangeo has upstream. Pinned to match pangeo-notebook image
-  - hdf5
   - libgdal-arrow-parquet==3.10.3
-  - libgdal-hdf5==3.10.3
+  - libgdal-netcdf==3.10.3
   - pre_commit
   - pip
   - pip:
