@@ -9,6 +9,7 @@ dependencies:
   - openssh
   # Remove once Pangeo has upstream. Pinned to match pangeo-notebook image
   - libgdal-arrow-parquet==3.10.3
+  - libgdal-netcdf==3.10.3
   - pre_commit
   - pip
   - pip:
