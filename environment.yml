@@ -15,6 +15,7 @@ dependencies:
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
     - jupyter-sshd-proxy
+    - jupytergis==0.3.0
     - jupyterlab-bxplorer
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
