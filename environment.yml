@@ -10,12 +10,12 @@ dependencies:
   # Remove once Pangeo has upstream. Pinned to match pangeo-notebook image
   - libgdal-arrow-parquet==3.10.3
   - libgdal-netcdf==3.10.3
+  - jupytergis==0.7.0
   - pre_commit
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
     - jupyter-sshd-proxy
-    - jupytergis==0.3.0
     - jupyterlab-bxplorer
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
