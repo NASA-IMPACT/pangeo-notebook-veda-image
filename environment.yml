@@ -11,6 +11,8 @@ dependencies:
   - libgdal-arrow-parquet==3.10.3
   - libgdal-netcdf==3.10.3
   - pre_commit
+  - virtualizarr
+  - icechunk
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
