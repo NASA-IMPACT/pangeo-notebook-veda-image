@@ -7,11 +7,9 @@ dependencies:
   - code-server>=3.2
   - jupyter-vscode-proxy
   - openssh
-  # Remove once Pangeo has upstream. Pinned to match pangeo-notebook image
-  - libgdal-arrow-parquet==3.10.3
-  - libgdal-netcdf==3.10.3
   - pre_commit
-  - virtualizarr
+  # Remove once Pangeo has upstream.
+  - virtualizarr>=2.0.0
   - icechunk
   - pip
   - pip:

@@ -1,4 +1,4 @@
-FROM pangeo/pangeo-notebook:2025.06.02
+FROM pangeo/pangeo-notebook:2025.08.14
 
 LABEL org.opencontainers.image.source="https://github.com/nasa-impact/pangeo-notebook-veda-image"
 
