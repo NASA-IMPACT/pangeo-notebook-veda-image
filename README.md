@@ -17,7 +17,7 @@ docker build -t pangeo-notebook-veda .
 docker run -v ./image-tests:/srv/repo/image-tests -e REGENERATE_OUTPUTS=true pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 ```
 
-### Regenrating the output of the test notebooks
+### Regenerating the output of the test notebooks
 
 To regenerate the output of the test notebooks, we can use the same command we used in the previous section to generate the output of the notebooks while adding new tests:
 
