@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2025.08.14-v2] - 2025-09-19
+
 ### Changed
 
 - Pin to `pystac==1.14.1` [#48](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/48)
@@ -51,7 +53,8 @@
 
 Initial release
 
-[Unreleased]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v1..main>
+[Unreleased]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v2..main>
+[2025.08.14-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v1..2025.08.14-v2>
 [2025.08.14-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.06.02-v1..2025.08.14-v1>
 [2025.06.02-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2024.11.11-v1..2025.06.02-v1>
 [2024.11.11-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2024.08.18-v1..2024.11.11-v1>
