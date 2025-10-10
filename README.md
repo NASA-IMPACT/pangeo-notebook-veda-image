@@ -1,6 +1,21 @@
 # Pangeo Notebook Veda Image
 
-Docker container based on pangeo-notebook used on VEDA JupyterHub.
+Docker image based on pangeo-notebook used on VEDA JupyterHub.
+
+## What's in the image
+
+The image builds off a particular tagged version of the [pangeo-notebook image](https://github.com/pangeo-data/pangeo-docker-images/tree/master/pangeo-notebook). Which tag in particular is specified in [the first line of the Dockerfile](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/blob/main/Dockerfile#L1). You can figure out which packages are included in that version of pangeo-notebook image by checking the [environment.yml](https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/environment.yml) and the exact versions by checking [packages.txt](https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/packages.txt).
+
+The image adds additional packages and environment variables specified in [environment.yml](environment.yml) without updating the existing libraries included in the default pangeo-notebook image.
+
+## How to use the image
+
+On each commit to this repository a new image is tagged and pushed to ECR. You can find the name of that image in the Github action that pushes it. The image name looks like:
+
+- public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:2025.08.14-v2  _for git tags_
+- public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:d6df85b998c3   _for regular git commits_
+
+That image name can be used on a JupyterHub that supports "Bring your own image". Just paste the image name into the "Custom image" input.
 
 ## Testing the image
 
