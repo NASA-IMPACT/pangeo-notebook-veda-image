@@ -1,33 +1,15 @@
-name: Build and push container image for BinderHub
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - "**" # Push to any branch
-    tags:
-      - "**"
-    paths-ignore:
-      - "README.md"
-      - "LICENSE"
-
-env:
-  IMAGE_NAME: pangeo-notebook-veda-image
-
+name: Build Notebook Container
+on: [push] # You may want to trigger this Action on other things than a push.
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
 
-    - name: Build and push to DockerHub with Binder cache
+    - name: checkout files in repo
+      uses: actions/checkout@main
+
+    - name: update jupyter dependencies with repo2docker
       uses: jupyterhub/repo2docker-action@master
       with:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}
-        BINDER_CACHE: true
-        PUBLIC_REGISTRY_CHECK: true
