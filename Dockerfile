@@ -10,3 +10,4 @@ RUN conda env update --prefix /srv/conda/envs/notebook --file environment.yml
 
 COPY --chown=${NB_USER}:${NB_USER} image-tests /srv/repo/image-tests
 COPY --chown=${NB_USER}:${NB_USER} scripts /srv/repo/scripts
+COPY --chown=${NB_USER}:${NB_USER} image-tests ${REPO_DIR}/image-tests
