@@ -3,6 +3,9 @@ channels:
   - nodefaults
 dependencies:
   - ipykernel
+  # Dependencies for sentintel-2 scripts
+  - p7zip==16.02
+  - libgdal-jp2openjpeg==3.10.3
   # Dependencies for VS Code IDE
   - code-server>=3.2
   - jupyter-vscode-proxy
