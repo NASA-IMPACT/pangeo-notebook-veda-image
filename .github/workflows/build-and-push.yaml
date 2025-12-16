@@ -8,9 +8,22 @@ jobs:
     - name: checkout files in repo
       uses: actions/checkout@main
 
-    - name: update jupyter dependencies with repo2docker
-      uses: jupyterhub/repo2docker-action@master
-      with:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image
+    - name: Build and push Docker image with jupyter-repo2docker
+      run: |
+        pip install jupyter-repo2docker
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+        # Build with GH_PAT as build arg
+        jupyter-repo2docker \
+          --no-run \
+          --user-name=jovyan \
+          --user-id=1000 \
+          --image-name=${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12} \
+          --cache-from=${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest \
+          --build-arg GH_PAT=${{ secrets.GH_PAT }} \
+          .
+
+        # Tag and push
+        docker tag ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12} ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:${GITHUB_SHA::12}
+        docker push ${{ secrets.DOCKER_USERNAME }}/disasters-notebook-veda-image:latest
