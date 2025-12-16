@@ -59,7 +59,7 @@ If you don't want to build the image yourself, you can use a pre-built image fro
 docker run -p 8888:8888 -v ./image-tests:/home/jovyan/image-tests public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:latest jupyter lab --ip 0.0.0.0
 ```
 
-### Running the tests locally
+### Running the tests locally 
 
 To run the tests locally, run the following command:
 
