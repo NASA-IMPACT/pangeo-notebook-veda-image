@@ -1,6 +1,6 @@
 # Pangeo Notebook Veda Image
 
-Docker image based on pangeo-notebook used on VEDA JupyterHub.
+Docker image based on pangeo-notebook used on Disasters JupyterHub.
 
 ## What's in the image
 
