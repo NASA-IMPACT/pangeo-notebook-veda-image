@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Base docker image updated to pangeo/pangeo-notebook:2025.12.30 [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
+
+### Removed
+
+- Remove `stac_ipyleaflet` [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
+- Remove `virtualizarr`, `icechunk` since they are now included in base pangeo-notebook image [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
+
+
 ## [2025.08.14-v2] - 2025-09-19
 
 ### Changed
