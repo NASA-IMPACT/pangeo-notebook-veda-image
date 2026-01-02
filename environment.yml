@@ -8,9 +8,6 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
-  # Remove once Pangeo has upstream.
-  - virtualizarr>=2.0.0
-  - icechunk
   - pip
   - pip:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
