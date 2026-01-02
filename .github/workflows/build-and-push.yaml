@@ -48,7 +48,7 @@ jobs:
         public: true
 
     - name: Build container image
-      uses: jsignell/repo2docker-action@34067d0a6e74e5b6b417bf5c034f77c8a3c4d91d
+      uses: jupyterhub/repo2docker-action@master
       with:
         DOCKER_REGISTRY: ${{ env.REGISTRY }}
         IMAGE_NAME: ${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}
