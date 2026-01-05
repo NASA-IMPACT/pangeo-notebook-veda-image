@@ -23,7 +23,7 @@ dependencies:
     - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
     - jupyter-sshd-proxy
     - jupyterlab-bxplorer
-    - git+https://github.com/Disasters-Learning-Portal/landsat-product-algorithm.git
+    - git+https://github.com/Disasters-Learning-Portal/disasters-product-algorithms.git
 variables:
   TITILER_STAC_ENDPOINT: 'https://openveda.cloud/api/stac'
   TITILER_ENDPOINT: 'https://openveda.cloud/api/raster'
