@@ -8,6 +8,8 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
+  # Pin down to avoid https://github.com/holoviz/pyviz_comms/issues/143
+  - pyviz_comms==3.0.4
   - pip
   - pip:
     - jupyter-sshd-proxy
