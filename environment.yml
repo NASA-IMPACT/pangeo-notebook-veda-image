@@ -8,16 +8,10 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
-  # Remove once Pangeo has upstream.
-  - virtualizarr>=2.0.0
-  - icechunk
-  # Working around https://github.com/holoviz/geoviews/pull/794
-  - geoviews-core==1.14.1
-  # Working around https://github.com/stac-utils/pystac/issues/1575
-  - pystac==1.14.1
+  # Pin down to avoid https://github.com/holoviz/pyviz_comms/issues/143
+  - pyviz_comms==3.0.4
   - pip
   - pip:
-    - git+https://github.com/MAAP-Project/stac_ipyleaflet.git@0.3.6
     - jupyter-sshd-proxy
     - jupyterlab-bxplorer
 variables:

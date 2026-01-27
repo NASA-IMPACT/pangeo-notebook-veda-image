@@ -48,7 +48,7 @@ jobs:
         public: true
 
     - name: Build container image
-      uses: jupyterhub/repo2docker-action@master
+      uses: NASA-IMPACT/repo2docker-action@master
       with:
         DOCKER_REGISTRY: ${{ env.REGISTRY }}
         IMAGE_NAME: ${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}
