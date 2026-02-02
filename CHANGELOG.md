@@ -14,6 +14,7 @@
 
 - Base docker image updated to pangeo/pangeo-notebook:2025.12.30 [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
 - Pin to `pyviz_comms==3.0.4`
+- Upgrade `earthaccess` relative to pangeo-notebook image
 
 ### Removed
 
