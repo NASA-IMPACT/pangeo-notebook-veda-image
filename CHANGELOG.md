@@ -2,15 +2,24 @@
 
 ## [Unreleased]
 
+### Added
+
+### Changed
+
+### Removed
+
+## [2025.12.30-v1] - 2026-01-27
+
 ### Changed
 
 - Base docker image updated to pangeo/pangeo-notebook:2025.12.30 [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
+- Pin to `pyviz_comms==3.0.4`
+- Upgrade `earthaccess` relative to pangeo-notebook image
 
 ### Removed
 
 - Remove `stac_ipyleaflet` [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
 - Remove `virtualizarr`, `icechunk` since they are now included in base pangeo-notebook image [#54](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/54)
-
 
 ## [2025.08.14-v2] - 2025-09-19
 
@@ -63,8 +72,9 @@
 
 Initial release
 
-[Unreleased]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v2..main>
-[2025.08.14-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v1..2025.08.14-v2>
+[Unreleased]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.12.30-v1..main>
+[2025.12.30-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v2..2025.12.30-v1>
+[2025.08.14-v2]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.08.14-v1..2025.08.14-v2>
 [2025.08.14-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2025.06.02-v1..2025.08.14-v1>
 [2025.06.02-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2024.11.11-v1..2025.06.02-v1>
 [2024.11.11-v1]: <https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/compare/2024.08.18-v1..2024.11.11-v1>
