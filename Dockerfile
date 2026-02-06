@@ -6,7 +6,10 @@ USER ${NB_USER}
 
 ADD environment.yml environment.yml
 
-RUN conda env update --prefix /srv/conda/envs/notebook --file environment.yml
+RUN conda env update --prefix /srv/conda/envs/notebook --file environment.yml \
+    && find /srv/conda/ -follow -type f -name '*.a' -delete \
+    && find /srv/conda/ -follow -type f -name '*.js.map' -delete \
+    && /srv/conda/bin/conda clean -afy
 RUN conda list
 
 COPY --chown=${NB_USER}:${NB_USER} image-tests /srv/repo/image-tests
