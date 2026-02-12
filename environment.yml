@@ -8,6 +8,8 @@ dependencies:
   - jupyter-vscode-proxy
   - openssh
   - pre_commit
+  # Add arbalister to render parquet
+  - arbalister
   # Upgrade from pangeo-notebook image
   - earthaccess>=0.16.0
   # Pin down to avoid https://github.com/holoviz/pyviz_comms/issues/143
