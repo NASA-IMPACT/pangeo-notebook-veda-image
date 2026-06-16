@@ -67,3 +67,16 @@ To run the tests locally, run the following command:
 docker build -t pangeo-notebook-veda .
 docker run pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 ```
+
+## Updating and Auditing Github Actions
+
+GitHub Actions in this repo are pinned to full commit SHAs for supply-chain safety.
+
+When updating an action, keep the `owner/action@<40-char-sha>` format with a tag comment like `# v6.0.3` and verify changes before merge.
+
+Zizmor can be used to audit the workflow safety, via pre-commit or directly with:
+
+```bash
+# Audit this repo's workflows
+zizmor .github/workflows/*.y*ml
+```

@@ -4,7 +4,7 @@
 
 2. Create a new branch `git checkout -b feature/update_package_<xyz>`
 
-3. and open `environment.yml`. It might look something like this: 
+3. and open `environment.yml`. It might look something like this:
 
 ```yaml
 channels:
@@ -53,7 +53,7 @@ Pushed image: public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:b98733c8ba26
 
 Note the full image URI will be `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<imageTag>`. The `imageTag` should match the latest commit hash of your branch.
 
-10. Copy the image URI from the logs of the GH action run that looks like `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<commit-hash>`. We can test this image on staging by going to https://staging.nasa-veda.2i2c.cloud/hub/spawn and selecting "Other" from the "Image" dropdown. 
+10. Copy the image URI from the logs of the GH action run that looks like `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<commit-hash>`. We can test this image on staging by going to https://staging.nasa-veda.2i2c.cloud/hub/spawn and selecting "Other" from the "Image" dropdown.
 
 11. In the "Custom image" input box, paste the image URI from the logs of the GH action run and click "Start".
 

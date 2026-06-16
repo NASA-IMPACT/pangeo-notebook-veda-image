@@ -1,10 +1,10 @@
 # Updating 2i2c's Singleuser Image for VEDA JupyterHubs
 
-JupyterHub configuration has the concept of a `singleuser` image that is the 
+JupyterHub configuration has the concept of a `singleuser` image that is the
 [default image for spinning up user pods](https://z2jh.jupyter.org/en/stable/jupyterhub/customizing/user-environment.html#choose-and-use-an-existing-docker-image).
 
-Currently https://staging.nasa-veda.2i2c.cloud/ and https://nasa-veda.2i2c.cloud/ both use the custom image from this repository as the default. 
-Below we walk through how to update this image and get it in these VEDA JH instances. This allows us to add 
+Currently https://staging.nasa-veda.2i2c.cloud/ and https://nasa-veda.2i2c.cloud/ both use the custom image from this repository as the default.
+Below we walk through how to update this image and get it in these VEDA JH instances. This allows us to add
 custom packages without us needing to request these custom packages upstream in the `pangeo-notebook` image.
 
 ## Update the Conda Environment
@@ -13,7 +13,7 @@ custom packages without us needing to request these custom packages upstream in 
 
 2. Create a new branch `git checkout -b feature/update_package_<xyz>`
 
-3. and open `environment.yml`. It might look something like this: 
+3. and open `environment.yml`. It might look something like this:
 
 ```yaml
 channels:
@@ -64,7 +64,7 @@ Pushed image: public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:b98733c8ba26
 
 Note the full image URI will be `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<imageTag>`. The `imageTag` should match the latest commit hash of your branch.
 
-4. Copy the image URI from the logs of the GH action run that looks like `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<commit-hash>`. We can test this image on staging by going to https://staging.nasa-veda.2i2c.cloud/hub/spawn and selecting "Other" from the "Image" dropdown. 
+4. Copy the image URI from the logs of the GH action run that looks like `public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:<commit-hash>`. We can test this image on staging by going to https://staging.nasa-veda.2i2c.cloud/hub/spawn and selecting "Other" from the "Image" dropdown.
 
 5. In the "Custom image" input box, paste the image URI from the logs of the GH action run and click "Start".
 
