@@ -7,6 +7,7 @@ dependencies:
   - code-server>=3.2
   - jupyter-vscode-proxy
   - openssh
+  - rio-tiler
   - pre_commit
   # Upgrade from pangeo-notebook image
   - earthaccess>=0.16.0
