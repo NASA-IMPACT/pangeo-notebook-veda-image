@@ -44,7 +44,7 @@ jobs:
       with:
         registry-type: public
 
-    - uses: int128/create-ecr-repository-action@c1b18173fe6f1285019539f07583f568bc304154 # v1.99.0
+    - uses: int128/create-ecr-repository-action@93fbdc64f5c36507f1c409bd07c673f4d83b22d7 # v1.470.0
       with:
         repository: ${{ env.IMAGE_NAME}}
         public: true
