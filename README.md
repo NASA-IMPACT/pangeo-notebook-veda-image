@@ -70,9 +70,8 @@ docker run pangeo-notebook-veda bash /srv/repo/scripts/run_tests.sh
 
 ## Updating and Auditing Github Actions
 
-GitHub Actions in this repo are pinned to full commit SHAs for supply-chain safety.
-
-When updating an action, keep the `owner/action@<40-char-sha>` format with a tag comment like `# v6.0.3` and verify changes before merge.
+GitHub Actions in this repo are pinned to full commit SHAs for supply-chain safety,
+and are kept updated through dependabot.
 
 Zizmor can be used to audit the workflow safety, via pre-commit or directly with:
 

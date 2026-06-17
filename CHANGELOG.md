@@ -6,6 +6,8 @@
 
 ### Changed
 
+- CI: Github Actions now use SHA version tag with version comment
+
 ### Removed
 
 ## [2025.12.30-v1] - 2026-01-27
