@@ -6,9 +6,19 @@
 
 ### Changed
 
-- CI: Github Actions now use SHA version tag with version comment
-
 ### Removed
+
+## [2026.06.25-v1] - 2026-06-25
+
+### Added
+
+- Add `arbalister` (installed via `pip`) [#58](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/58) [#63](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/63)
+- Add `rio-tiler` [#69](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/69)
+
+### Changed
+
+- Base docker image updated to `pangeo/pangeo-notebook:2026.06.04` [#63](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/63)
+- CI: GitHub Actions now use SHA-pinned action references with version comments [#68](https://github.com/NASA-IMPACT/pangeo-notebook-veda-image/pull/68)
 
 ## [2025.12.30-v1] - 2026-01-27
 
