@@ -12,6 +12,8 @@ The image adds additional packages and environment variables specified in [envir
 
 On each commit to this repository a new image is tagged and pushed to ECR. You can find the name of that image in the Github action that pushes it. The image name looks like:
 
+Release tags in this repository should be named from the upstream pangeo-notebook release tag referenced in the Dockerfile (for example, `<pangeo-release>-vN`).
+
 - public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:2025.08.14-v2  _for git tags_
 - public.ecr.aws/nasa-veda/pangeo-notebook-veda-image:d6df85b998c3   _for regular git commits_
 
